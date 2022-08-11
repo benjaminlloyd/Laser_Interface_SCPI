@@ -1,11 +1,12 @@
 class SCPI_FUNC:
-    def __init__(self):
+    def __init__(self,inst):
         import pyvisa
         import time
         import numpy as np
         import matplotlib.pyplot as plt
         import sys  # For version_info and platform
         import time  # For sleep, clock, time and perf_counter
+        self.inst=inst
         
     def wavlen(args,lmbd):
         args.inst.write(':SOUR:CHAN:WAV '+str(lambd)+'nm') #sets laser wavelength
